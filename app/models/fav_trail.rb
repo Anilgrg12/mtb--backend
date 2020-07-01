@@ -1,0 +1,2 @@
+class FavTrail < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class FavTrailsController < ApplicationController
+end
