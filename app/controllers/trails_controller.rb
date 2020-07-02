@@ -1,2 +1,31 @@
 class TrailsController < ApplicationController
-end
+    def index
+        trails = Trail.all
+        render json:trails
+      end
+  
+      def show
+          trail = Trail.find(params[:id])
+          render json:trail
+      end
+  
+      def create
+          trail = Trail.create(trail_params)
+          render json:trail
+      end
+  
+      def destroy 
+          trail = Trail.find(params[:id])
+          trail.destroy
+          render json: trail
+      end
+  
+  
+      private
+  
+      def trail_params
+          params.require(:trail).permit(:name,:difficulty,:length,:stars,:description,:comment,:high,:low,:image_url)
+      end
+  
+  end
+
