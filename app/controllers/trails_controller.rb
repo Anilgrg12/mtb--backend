@@ -1,12 +1,12 @@
 class TrailsController < ApplicationController
     def index
         trails = Trail.all
-        render json:trails
+        render json:trails, include: [:reviews]
       end
   
       def show
           trail = Trail.find(params[:id])
-          render json:trail
+          render json:trail, include: [:reviews]
       end
   
       def create
@@ -19,6 +19,7 @@ class TrailsController < ApplicationController
           trail.destroy
           render json: trail
       end
+      
   
   
       private

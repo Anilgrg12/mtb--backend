@@ -34,8 +34,20 @@ class UsersController < ApplicationController
     
       def add_trail
         @user = User.find(params[:id]).trails
-        render json: @user   
-       end
+        render json: @user
+      end
+
+      def my_events
+        @user = User.find(params[:id]).events
+        render json: @user
+      end
+    
+      def add_event
+        @user = User.find(params[:id]).events
+        render json: @user
+      end
+
+
       
       
       
@@ -43,7 +55,7 @@ class UsersController < ApplicationController
       def create
         @user = User.new(user_params)
         if @user.save
-          login!
+        #   login!
           render json: {
             status: :created,
             user: @user
@@ -60,7 +72,7 @@ class UsersController < ApplicationController
       private
       
       def user_params
-        params.require(:user).permit(:id,:name,:image,:email, :password, :password_confirmation)
+        params.require(:user).permit(:id,:name,:image,:email, :password,:password_digest, :password_confirmation,:username)
       end
     end
 

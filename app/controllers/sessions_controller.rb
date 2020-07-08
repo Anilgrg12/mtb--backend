@@ -14,6 +14,9 @@ class SessionsController < ApplicationController
                else 
                   render json: {errors: "Sorry wrong password!!!!!!!!!!"}
           end 
-      
+       else 
+          render json: {errors: "User is not registered"}
+      end
+
   end
   end
