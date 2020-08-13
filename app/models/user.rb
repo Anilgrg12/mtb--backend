@@ -4,6 +4,5 @@ class User < ApplicationRecord
     has_many :fav_events
     has_many :trails, through: :fav_trails
     has_many :events, through: :fav_events
-    # has_many :trails, through: :reviews
-    # has_many :trails, through: :events
+
 end
