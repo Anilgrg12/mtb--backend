@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        # byebug
+        
             user_id = params[:user_id].to_i
             trail_id = params[:trail_id].to_i
 

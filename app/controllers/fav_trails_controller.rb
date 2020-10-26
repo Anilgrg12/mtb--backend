@@ -2,7 +2,6 @@ class FavTrailsController < ApplicationController
     def index
         fav_trails= FavTrail.all
         render json: fav_trails
-        # include [:user, :trail]
     end
 
     def  create
@@ -11,7 +10,6 @@ class FavTrailsController < ApplicationController
         fav_trail = FavTrail.create(user_id: user.id, trail_id: trail.id)
        
         render json: fav_trail
-        # include [:user, :trail]
     end
 
     def show
