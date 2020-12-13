@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-
-   def index
-   end
-
    def create
       email=params[:email]
       password=params[:password]
