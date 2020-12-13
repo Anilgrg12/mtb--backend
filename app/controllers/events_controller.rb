@@ -7,11 +7,11 @@ class EventsController < ApplicationController
   def show
     event = Event.find(params[:id])
     render json:event
-end
+  end
 
 private
   
   def event_params
       params.require(:event).permit(:name,:date_time,:state,:city,:img,:description,:website)
   end
-end
+endd
