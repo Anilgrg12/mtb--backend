@@ -14,4 +14,4 @@ private
   def event_params
       params.require(:event).permit(:name,:date_time,:state,:city,:img,:description,:website)
   end
-endd
+end
